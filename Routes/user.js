@@ -16,7 +16,17 @@ router.post('/sign-up', signUpController.post);
 router.get('/sign-in', signInController.display);
 router.post('/sign-in', signInController.post);
 
-router.get('/category', categoryController.display)
+router.get('/category', categoryController.display);
+router.get('/category/biography', categoryController.biography);
+router.get('/category/history', categoryController.history);
+router.get('/category/sport', categoryController.sport);
+router.get('/category/medical', categoryController.medical);
+router.get('/category/health', categoryController.health);
+router.get('/category/computing', categoryController.computing);
+router.get('/category/horror', categoryController.horror);
+router.get('/category/children', categoryController.children);
+router.get('/category/art', categoryController.art);
+
 router.get('/information', informationController.display);
 router.get('/bestseller', bestsellerController.display);
 

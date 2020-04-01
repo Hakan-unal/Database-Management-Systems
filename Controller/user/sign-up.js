@@ -1,7 +1,7 @@
 const signUpModel = require('../../Models/sign-up');
 
 exports.display = (req, res) => {
-    res.render('sign-up', { title: 'Sign Up' });
+    res.render('./user/sign-up', { title: 'Sign Up' });
 }
 
 exports.post = (req, res) => {

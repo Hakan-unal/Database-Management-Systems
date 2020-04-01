@@ -1,0 +1,21 @@
+mixin createList(book)
+    .col-md-4
+        .card.my-3
+            .card-header.text-capitalize.bg-dark.text-light
+                span.font-weight-bold Name: 
+                span #{book.name} 
+
+            .card-body
+                h4.card-title.text-capitalize 
+                .div
+                    span.font-weight-bold Price: 
+                    span.text-uppercase #{book.price}
+                .div
+                    span.font-weight-bold Author: 
+                    span.text-uppercase #{book.author}
+                .div
+                    span.font-weight-bold Publisher: 
+                    span.text-uppercase #{book.publisher}
+                                               
+            .card-footer.bg-dark
+                a.btn.btn-light.btn-lg(href=`/borrow`) Borrow

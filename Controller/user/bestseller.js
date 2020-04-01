@@ -1,3 +1,3 @@
 exports.display = (req, res) => {
-    res.render('bestseller', {title: 'Bestseller'});
+    res.render('./user/bestseller', {title: 'Bestseller'});
 }

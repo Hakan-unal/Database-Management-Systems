@@ -1,7 +1,7 @@
 const sıgnInModel = require('../../Models/sign-in');
 
 exports.display = (req, res) => {
-    res.render('sign-in', { title: 'Sign In' });
+    res.render('./user/sign-in', { title: 'Sign In' });
 }
 
 exports.post = (req, res) => {
@@ -12,5 +12,7 @@ exports.post = (req, res) => {
         } else {
             res.redirect('/');
         }
+    } else {
+        res.redirect('/');
     }
 }

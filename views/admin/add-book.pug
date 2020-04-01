@@ -1,0 +1,37 @@
+extends ../layouts/main.pug
+
+block content
+    .card
+        .card-body
+            form(name="add-book" for="/admin/add-book" method="POST").form-group
+
+                label(for="name") Name
+                input(type="text" name="name").form-control.form-group
+
+                label(for="author") Author
+                input(type="text" name="author").form-control.form-group
+
+                label(for="publisher") Publisher
+                input(type="text" name="publisher").form-control.form-group
+
+                label(for="price") Price
+                input(type="text" name="price").form-control.form-group
+
+                .form-group
+                    label Category
+                    select(name="category").form-control
+                        option Biography
+                        option History
+                        option Sport
+                        option Medical
+                        option Health
+                        option Computing
+                        option Horror
+                        option Children
+                        option Art
+                        
+                button(type="submit").btn.btn-dark Add
+
+
+        .card-footer.bg-dark
+            small.form-text.text-light We'll never share your personality information with anyone else.

@@ -1,0 +1,11 @@
+extends ../layouts/main
+
+include ../mixins/createList
+
+block content
+    .row
+        if books !== null
+            each book in books
+                +createList(book)
+        else
+            h1 No Products

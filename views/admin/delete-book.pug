@@ -1,28 +1,12 @@
 extends ../layouts/main.pug
 
 block content
-    .card
-        .card-body
-            form(name="sign-up" for="/admin/sign-up" method="POST").form-group
-
-                label(for="name") Name
-                input(type="text" name="name").form-control.form-group#name
-
-                label(for="email") Email
-                input(type="email" name="email").form-control.form-group#email
-
-                label(for="password") Password
-                input(type="password" name="password").form-control.form-group#password
-
-                .form-group
-                    label Gender
-                    select(name="gender").form-control
-                        option Female
-                        option Male
-                        option Other
-                        
-                button(type="submit").btn.btn-dark Sign Up
-
-
-        .card-footer.bg-dark
-            small.form-text.text-light We'll never share your personality information with anyone else.
+    ul.list-group
+        if books !== null
+            each val in books
+                li.list-group-item.d-flex.justify-content-between.align-items-center= val.name
+                    span Category: #{val.category}
+                    a.list-group-item.btn.btn-light(href=`delete-book/${val.id}`)
+                        i.fas.fa-trash-alt
+        else
+            li.list-group-item No books

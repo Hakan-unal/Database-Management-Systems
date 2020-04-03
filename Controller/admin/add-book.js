@@ -10,10 +10,8 @@ exports.post = (req, res) => {
         let bookObject;
         bookObject = new addBookModel(req);
         bookObject.saveBook();
-        res.redirect('/');
+        res.redirect('/admin/add-book');
     } else {
-        res.render('index', { title: 'Invalid' });
+        res.redirect('/');
     }
-
-    res.redirect('/');
 }

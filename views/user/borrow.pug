@@ -1,0 +1,24 @@
+extends ../layouts/main.pug
+
+block content
+    .card
+        .card-body
+            form(name="borrow" for="/borrow/:id" method="POST").form-group
+
+                label(for="bookName" ) Book Name
+                input(type="text" name="bookName" value=`${book.name}` disabled).form-control.form-group
+                
+                label(for="price") Price
+                input(type="text" name="price"  value=`${book.price}` disabled).form-control.form-group
+                
+                label(for="yourName") Your Name
+                input(type="text" name="yourName").form-control.form-group
+
+                label(for="date").col-2.col-form-label Due Date
+                input(type="date" name='date').form-control
+                     
+                button(type="submit").btn.btn-dark.my-4 Borrow
+
+
+        .card-footer.bg-dark
+            small.form-text.text-light We'll never share your personality information with anyone else.

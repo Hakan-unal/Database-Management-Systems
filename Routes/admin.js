@@ -7,6 +7,7 @@ const deleteBookController = require('../Controller/admin/delete-book');
 router.get('/add-book', addBookController.display);
 router.post('/add-book', addBookController.post);
 router.get('/delete-book', deleteBookController.display);
+router.get('/delete-book/:id',deleteBookController.delete);
 
 
 

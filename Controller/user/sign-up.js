@@ -11,6 +11,6 @@ exports.post = (req, res) => {
         userObject.saveUser();
         res.redirect('/');
     } else {
-        res.render('sign-up', { title: 'Invalid' });
+        res.redirect('/');
     }
 }

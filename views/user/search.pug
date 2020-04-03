@@ -1,6 +1,8 @@
-mixin createList(book)
-    .col-md-4
-        .card.my-3
+extends ../layouts/main
+
+block content
+    .col
+        .card
             .card-header.text-capitalize.bg-dark.text-light
                 span.font-weight-bold Name: 
                 span #{book.name} 

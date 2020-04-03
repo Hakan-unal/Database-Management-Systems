@@ -7,9 +7,10 @@ const signInController = require('../Controller/user/sign-in');
 const categoryController = require('../Controller/user/category');
 const informationController = require('../Controller/user/information');
 const bestsellerController = require('../Controller/user/bestseller');
+const borrowController = require('../Controller/user/borrow');
 
 router.get('/', indexController.display);
-
+router.post('/', indexController.search);
 router.get('/sign-up', signUpController.display);
 router.post('/sign-up', signUpController.post);
 
@@ -26,6 +27,9 @@ router.get('/category/computing', categoryController.computing);
 router.get('/category/horror', categoryController.horror);
 router.get('/category/children', categoryController.children);
 router.get('/category/art', categoryController.art);
+
+router.get('/borrow/:id', borrowController.display);
+router.post('/borrow/:id', borrowController.post);
 
 router.get('/information', informationController.display);
 router.get('/bestseller', bestsellerController.display);

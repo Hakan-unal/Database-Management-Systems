@@ -8,6 +8,7 @@ class Book {
         this.publisher = req.body.publisher;
         this.price = req.body.price;
         this.category = req.body.category;
+        this.id = Math.round(Math.random() * 100000).toString();
     }
     saveBook() {
         let list;

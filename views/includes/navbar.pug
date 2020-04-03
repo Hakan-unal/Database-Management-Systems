@@ -1,6 +1,6 @@
 nav#navbar.navbar.navbar-dark.bg-dark.navbar-expand
     a.navbar-brand(href="/")
-        i.fas.fa-book.fa-2x.p-2(href='/') BookStore
+        i.fas.fa-book.fa-2x.p-2 BookStore
 
         .collapse.navbar-collapse#navbarNav
             ul.navbar-nav
@@ -13,6 +13,6 @@ nav#navbar.navbar.navbar-dark.bg-dark.navbar-expand
                 li.nav-item.mx-1.mr-5
                     a.nav-link(href="/sign-up") Sign Up
                 li.mx-5
-                    form.form-inline.ml-5(name="form" for="/search" method="POST")
-                        input.form-control.mr-sm-2(type="search" placeholder="Search" aria-label="Search" name="search")
+                    form.form-inline.ml-5(name="form" method="POST")
+                        input.form-control.mr-sm-2(type="text" placeholder="Book Name" aria-label="Search" name="search")
                         button.btn.btn-outline-light.my-2.my-sm-0(type="submit") Search

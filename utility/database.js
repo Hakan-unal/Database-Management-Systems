@@ -10,6 +10,7 @@ const connection = mysql.createConnection({
 
 
 
+
 class Books {
     constructor(book_id, publisher, author, book_name, category) {
         this.book_id = book_id;
@@ -24,7 +25,7 @@ class Books {
     }
 
     static getById(id) {
-        return connection.execute('SELECT publisher,author,book_name,category FROM books WHERE book_id=?', [id]);
+        return connection.execute('SELECT publisher,author,book_name,category FROM books WHERE id=?', [id]);
     }
 
     static update(book) {
@@ -35,6 +36,9 @@ class Books {
         return connection.execute('DELETE FROM books WHERE id=?', [id]);
     }
 }
+
+
+
 
 
 
@@ -54,7 +58,7 @@ class Member {
     }
 
     static getById(id) {
-        return connection.execute('SELECT member_name,member_surname,email FROM member WHERE member_id=?', [id]);
+        return connection.execute('SELECT member_name,member_surname,email FROM member WHERE id=?', [id]);
     }
 
     static update(member) {
@@ -69,6 +73,7 @@ class Member {
 
 
 
+
 class Borrow {
     constructor(due_date, book_name, member_name) {
         this.due_date = due_date;
@@ -76,12 +81,12 @@ class Borrow {
         this.member_name = member_name;
     }
 
-    saveBook() {
+    saveBorrow() {
         return connection.execute('INSERT INTO borrowby(due_date,book_name,member_name) VALUES(?,?,?)', [this.due_date, this.book_name, this.member_name]);
     }
 
-    static getById(member_name) {
-        return connection.execute('SELECT book_name,due_date FROM borrowby WHERE member_name=?', [member_name]);
+    static getById(id) {
+        return connection.execute('SELECT book_name,due_date FROM borrowby WHERE id=?', [id]);
     }
 
     static update(member) {
@@ -95,9 +100,10 @@ class Borrow {
 
 
 
+
+
+
 module.exports = connection.promise();
 module.exports = Books;
 module.exports = Member;
 module.exports = Borrow;
-
-
